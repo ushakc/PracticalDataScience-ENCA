@@ -4,8 +4,14 @@ import json
 import pandas as pd
 
 def extract(URL):
-    client_id = "5356afb958c84e71a2c37c43e2a2cbf2" 
-    client_secret = "83e531491e9c458ba658ac30c4c56bc0"
+    #client_id = "91cf8e75fe67449290e7fa66b4742fe7" 
+    #client_secret = "eedf9be8aa914f0fa078aacbc9bdffe5"
+    with open("C:\\Users\\bkush\\projects\\PracticalDataScience-ENCA\\secret.txt") as f:
+        secret_ls = f.readlines()
+        cid = secret_ls[0][:-1]
+        secret = secret_ls[1]
+    client_id = cid
+    client_secret = secret
 
     #use the clint secret and id details
     client_credentials_manager = SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
